@@ -12,7 +12,7 @@ export default {
             deferred.resolve({
                 data: data
             })
-        }, 1000)
+        }, 1500)
 
         return deferred.promise;
     }

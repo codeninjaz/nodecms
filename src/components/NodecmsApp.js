@@ -32,12 +32,12 @@ export default class NodecmsApp extends React.Component {
         this.setState(Store.getState());
     }
 
-    getList(state) {
-        if (!state.data) {
+    getList() {
+        if (!this.state.data) {
             return null
         };
 
-        let list = state.data.pages;
+        let list = this.state.data.pages;
         let lis = [];
         _.forEach(list, function(item, index) {
             lis.push(
@@ -48,12 +48,11 @@ export default class NodecmsApp extends React.Component {
     }
 
     render() {
-        console.log('this.state.data', this.state.data);
         return (
             <div className='main'>
                 <ReactTransitionGroup transitionName="fade">
                     <ul>
-                        {this.getList(this.state)}
+                        {this.getList()}
                     </ul>
                 </ReactTransitionGroup>
             </div>
