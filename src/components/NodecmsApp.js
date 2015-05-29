@@ -1,11 +1,10 @@
 import React from 'react/addons';
-var ReactTransitionGroup = React.addons.TransitionGroup;
+import imageURL from '../images/yeoman.png';
 
 import 'normalize.css';
 import '../styles/main.css';
 
-import imageURL from '../images/yeoman.png';
-console.log('imageURL', imageURL);
+var ReactTransitionGroup = React.addons.TransitionGroup;
 
 export default class NodecmsApp extends React.Component {
     constructor(props) {

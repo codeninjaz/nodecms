@@ -5,6 +5,5 @@
   "esprimaOptions"          : {"tolerant":false},
   "maximumLineLength"       : 820,
   "validateIndentation"     : 4,
-  "validateQuoteMarks"      : "'",
-  "disallowMultipleVarDecl" : "false"
+  "validateQuoteMarks"      : "'"
 }
