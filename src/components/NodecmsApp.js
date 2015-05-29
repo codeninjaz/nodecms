@@ -33,18 +33,15 @@ export default class NodecmsApp extends React.Component {
     }
 
     getList(state) {
-        console.log('getList');
         if (!state.data) {
             return null
         };
 
         let list = state.data.pages;
-        console.log('list', list);
         let lis = [];
-        _.forEach(list, function(item) {
-            console.log('item', item);
+        _.forEach(list, function(item, index) {
             lis.push(
-                <li>{item.id} - {item.name}</li>
+                <li key={index}>{item.id} - {item.name}</li>
                 )
         })
         return lis;
