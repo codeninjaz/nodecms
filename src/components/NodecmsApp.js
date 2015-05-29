@@ -2,6 +2,7 @@ import React from 'react/addons';
 import imageURL from '../images/yeoman.png';
 import Store from '../stores/pagestore';
 import Action from '../actions/dummyaction';
+import pauseGif from '../images/be7.gif';
 import _ from 'lodash';
 
 import 'normalize.css';
@@ -34,7 +35,9 @@ export default class NodecmsApp extends React.Component {
 
     getList() {
         if (!this.state.data) {
-            return null
+            return (
+                <img style={{width:'376px', height:'238px'}} src={pauseGif} />
+                )
         };
 
         let list = this.state.data.pages;
@@ -44,16 +47,18 @@ export default class NodecmsApp extends React.Component {
                 <li key={index}>{item.id} - {item.name}</li>
                 )
         })
-        return lis;
+        return (
+            <ul>
+                {lis}
+            </ul>
+            );
     }
 
     render() {
         return (
             <div className='main'>
                 <ReactTransitionGroup transitionName="fade">
-                    <ul>
-                        {this.getList()}
-                    </ul>
+                    {this.getList()}
                 </ReactTransitionGroup>
             </div>
         );
