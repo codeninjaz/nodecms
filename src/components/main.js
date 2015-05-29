@@ -1,8 +1,9 @@
+import 'babel/polyfill';
 import NodecmsApp from './NodecmsApp';
 import React from 'react';
 import Router from 'react-router';
-let Route = Router.Route;
 
+let Route = Router.Route;
 let content = document.getElementById('content');
 
 let Routes = (

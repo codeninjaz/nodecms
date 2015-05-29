@@ -48,6 +48,9 @@ module.exports = {
             exclude : /node_modules/,
             loaders :  ['react-hot', 'babel-loader']
         }, {
+            test: /\.json$/,
+            loader: 'json'
+        }, {
             test   : /\.scss/,
             loader : 'style-loader!css-loader!sass-loader?outputStyle=expanded'
         }, {

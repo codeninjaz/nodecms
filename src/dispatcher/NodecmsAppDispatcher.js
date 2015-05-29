@@ -1,3 +1,14 @@
 var Dispatcher = require('flux').Dispatcher;
 
-module.exports = new Dispatcher();
+class NodecmsAppDispatcher extends Dispatcher{
+    handleAction(action) {
+        this.dispatch({
+            source: 'VIEW_ACTION',
+            action: action
+        });
+    }
+}
+
+let _NodecmsAppDispatcher = new NodecmsAppDispatcher();
+
+export default _NodecmsAppDispatcher;
