@@ -4,6 +4,7 @@ import Store from '../stores/pagestore';
 import Action from '../actions/dummyaction';
 import pauseGif from '../images/be7.gif';
 import _ from 'lodash';
+import QuickBox from './QuickBox';
 
 import 'normalize.css';
 import '../styles/main.scss';
@@ -16,6 +17,7 @@ export default class NodecmsApp extends React.Component {
         super(props);
         this.state = Store.getState();
     }
+
     componentWillMount() {
         Store.addChangeListener(this._onChange.bind(this));
         console.log('Listening for changes');
@@ -57,6 +59,7 @@ export default class NodecmsApp extends React.Component {
     render() {
         return (
             <div className='main'>
+                <QuickBox />
                 <ReactTransitionGroup transitionName="fade">
                     {this.getList()}
                 </ReactTransitionGroup>
