@@ -1,44 +1,58 @@
 {
     "pages":[
         {
-            "id":0,
+            "id":"273bd4f4-97ac-4caf-9e2e-9837f7193679",
             "name": "Start",
             "layout":"startpage",
             "theme":"grey",
             "updated":"2015-05-01 15:33",
-            "updatedBy":"Shoobah"
+            "updatedBy":"Shoobah",
+            "created":"2015-04-20 13:05",
+            "createdBy":"odin",
+            "menu":["f113c6cc-2b72-4c7f-8c9d-9d165b9dc62a","cc575c57-4fe6-4db6-b1c2-11da9cdbeaec"],
+            "puffs":["7ca1136f-437f-4b1e-82e6-8a7da61b53dd"]
         },
         {
-            "id":1,
+            "id":"f113c6cc-2b72-4c7f-8c9d-9d165b9dc62a",
             "name": "Kanji",
             "layout":"common",
             "theme":"grey",
             "updated":"2015-05-01 15:34",
-            "updatedBy":"Shoobah"
+            "updatedBy":"Shoobah",
+            "created":"2015-04-20 13:05",
+            "createdBy":"odin",
+            "menu":["ba10c97a-8e8c-4716-8a56-48641b36b49e"]
         },
         {
-            "id":2,
+            "id":"8a967490-9eb5-4286-a812-b622e4b9182e",
             "name": "Bento",
             "layout":"common",
             "theme":"grey",
             "updated":"2015-05-01 15:45",
-            "updatedBy":"Shoobah"
+            "updatedBy":"Shoobah",
+            "created":"2015-04-20 13:05",
+            "createdBy":"odin"
         },
         {
-            "id":3,
+            "id":"acf77585-af7b-4054-8753-930d3808b611",
             "name": "Sushi",
             "layout":"common",
             "theme":"grey",
             "updated":"2015-05-01 16:14",
-            "updatedBy":"Shoobah"
+            "updatedBy":"Shoobah",
+            "created":"2015-04-20 13:05",
+            "createdBy":"odin",
+            "menu":["d4440208-1826-4daa-9fbb-35a0b4f5e3aa"]
         },
         {
-            "id":4,
+            "id":"7ca1136f-437f-4b1e-82e6-8a7da61b53dd",
             "name": "Wasabi",
             "layout":"common",
             "theme":"grey",
             "updated":"2015-05-03 10:07",
-            "updatedBy":"Xonium"
+            "updatedBy":"Xonium",
+            "created":"2015-04-20 13:05",
+            "createdBy":"odin"
         }
     ]
 }
