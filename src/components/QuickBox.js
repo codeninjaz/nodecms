@@ -5,7 +5,7 @@ export default class QuickBox extends React.Component {
     constructor(props) {
         super(props);
 
-        this._eventObj = {
+        this._keydownEvent = {
             handleEvent: function(e) {
                 var charCode = (typeof e.which === 'number') ? e.which : e.keyCode;
                 if (charCode) {
@@ -13,40 +13,57 @@ export default class QuickBox extends React.Component {
                     if (charCode === 8) {
                         if (this.qbString.length >= 1) {
                             this.qbString = this.qbString.substr(0, this.qbString.length - 1);
+                        } else {
+                            this.componentActive = false;
                         }
                     } else {
                         this.qbString = this.qbString + String.fromCharCode(charCode);
                     }
 
-                    this.positionX = 100; //fixa muspos
-                    this.positionY = 400;
+                    if (this.qbString.length > 0) {
+                        this.componentActive = true;
+                    }
+
                     this.qb.forceUpdate();
                 }
             },
             qbString: '',
             qb: this,
-            positionX: null,
-            positionY: null,
+            componentActive: false
         };
+
+        this._mouseMovement = {
+		    handleEvent: function(e){
+                this.mousePositionX = e.clientX;
+                this.mousePositionY = e.clientY;
+            },
+            mousePositionX: null,
+            mousePositionY: null,
+            };
     }
 
     componentWillMount() {
-        window.addEventListener('keydown', this._eventObj);
+        window.addEventListener('keydown', this._keydownEvent);
+        document.addEventListener('mousemove', this._mouseMovement);
     }
 
     componentWillUnmount() {
+        window.removeEventListener('keydown', this._keydownEvent);
+        document.removeEventListener('mousemove', this._mouseMovement);    	
     }
 
     render() {
         var divStyle = {
             position: 'absolute',
-            left: this._eventObj.positionX,
-            top: this._eventObj.positionY
+            left: this._mouseMovement.mousePositionX,
+            top: this._mouseMovement.mousePositionY
         }
 
+        var activeClass = this._keydownEvent.componentActive ? 'active' : 'inactive';
+
         return (
-            <div style={divStyle}>
-                <QuickBoxText searchString={this._eventObj.qbString} />
+            <div className={activeClass} style={divStyle}>
+                <QuickBoxText searchString={this._keydownEvent.qbString} />
             </div>
         );
     }
