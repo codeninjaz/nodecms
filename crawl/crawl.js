@@ -1,4 +1,5 @@
 import Crawler from 'js-crawler'
+import FS from 'fs'
 
 let myUrl = process.argv[2];
 let depth = 2;
@@ -33,16 +34,15 @@ crawler.crawl({
             otherPages.push(page);
         }
     },
-    failed: function(page) {
+    failure: function(page) {
         otherPages.push(page)
     },
     finished: function(crawledUrls) {
-        console.log(`Krälade igenom ${crawledUrls.length} sidor`);
-        console.log(`Sparade ${myPages.length} sidor`);
-        console.log('-------------------------------------------------')
-        for (var i = otherPages.length - 1; i >= 0; i--) {
-            console.log(otherPages[i].url);
-        };
-        console.log('-------------------------------------------------')
+        FS.writeFile('./crawled.json', JSON.stringify(myPages), function(err) {
+            if (err) {
+                throw err;
+                console.log(`Saved ${myPages.length} pages to file`);
+            }
+        })
     }
 })
