@@ -6,7 +6,7 @@ let crawler = new Crawler().configure({
 })
 
 crawler.crawl({
-    url: 'http://www.gavlenet.se',
+    url: process.argv[2],
     success: function(page) {
         console.log(page.url);
     },
