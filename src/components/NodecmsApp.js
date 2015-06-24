@@ -5,11 +5,13 @@ import Action from '../flux/actions/dummyaction';
 import pauseGif from '../images/be7.gif';
 import _ from 'lodash';
 import QuickBox from './QuickBox';
+import Router from 'react-router';
 
 import 'normalize.css';
 import '../styles/main.scss';
 
 var ReactTransitionGroup = React.addons.TransitionGroup;
+var RouteHandler = Router.RouteHandler;
 
 //This is the main controller thingy, talking to the store.
 export default class NodecmsApp extends React.Component {
@@ -60,6 +62,8 @@ export default class NodecmsApp extends React.Component {
         return (
             <div className='main'>
                 <QuickBox />
+
+                <RouteHandler />
                 <ReactTransitionGroup transitionName="fade">
                     {this.getList()}
                 </ReactTransitionGroup>

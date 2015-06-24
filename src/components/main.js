@@ -8,8 +8,8 @@ let Route = Router.Route;
 let content = document.getElementById('content');
 
 let Routes = (
-  <Route handler={NodecmsApp}>
-    <Route path="/crawl" handler={CrawlTest}/>
+  <Route path="/" handler={NodecmsApp}>
+    <Route path="crawl" handler={CrawlTest}/>
   </Route>
 );
 
